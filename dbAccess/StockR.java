@@ -173,27 +173,4 @@ public class StockR implements StockReader
     //DEBUG.trace( "DB StockR: getImage -> %s", filename );
     return new ImageIcon( filename );
   }
-
-  /**
-   * Returns a list of all product numbers in a stock list
-   * @return List of product numbers in the stock list
-   */
-  public synchronized List<String> getAllProductNumbers() throws StockException {
-    List<String> productNumbers = new ArrayList<>();
-    try {
-      // SQL query to select all product numbers from the database
-      ResultSet rs = getStatementObject().executeQuery(
-              "SELECT productNo" + " FROM ProductTable"
-      );
-      // iterate through the results
-      while (rs.next()) {
-        productNumbers.add(rs.getString("productNo"));
-      }
-      rs.close();
-    } catch (SQLException e) {
-      // if an error happens, show a StockExpection with details about the issue
-      throw new StockException("SQL getAllProductNumbers: " + e.getMessage());
-    }
-    return productNumbers;
-  }
 }
