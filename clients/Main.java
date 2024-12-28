@@ -13,6 +13,7 @@ import clients.login.LoginView;
 import clients.packing.PackingController;
 import clients.packing.PackingModel;
 import clients.packing.PackingView;
+import clients.setting.SettingView;
 import middle.LocalMiddleFactory;
 import middle.MiddleFactory;
 import javax.swing.*;
@@ -64,11 +65,21 @@ class Main
       public void onLoginSuccess() {
         startCustomerGUI_MVC( mlf );
         startCashierGUI_MVC( mlf );
-        startCashierGUI_MVC( mlf );
         startPackingGUI_MVC( mlf );
         startBackDoorGUI_MVC( mlf );
+        startSettingGUI( mlf );
       }
     });
+    window.setVisible(true);
+  }
+
+  public void startSettingGUI(MiddleFactory mlf) {
+    JFrame window = new JFrame("Settings");
+    window.setTitle("Settings");
+    window.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+    Dimension pos = PosOnScrn.getPos();
+
+    SettingView view = new SettingView( window, mlf, pos.width, pos.height);
     window.setVisible(true);
   }
 
