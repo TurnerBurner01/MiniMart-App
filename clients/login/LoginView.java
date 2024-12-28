@@ -97,10 +97,10 @@ public class LoginView {
     /**
      * setLoginListener()
      * This method is used to set the listener
-     * @param listener
      */
     public void setLoginListener(LoginListener listener) {
         this.listener = listener;
     }
+
 }
 

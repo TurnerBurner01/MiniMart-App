@@ -34,7 +34,6 @@ public class CustomerView implements Observer
   private final JScrollPane theSP      = new JScrollPane();
   private final JButton     theBtCheck = new JButton( Name.CHECK );
   private final JButton     theBtClear = new JButton( Name.CLEAR );
-  private final JComboBox<String> theDropDown = new JComboBox<>();
 
   private Picture thePicture = new Picture(80,80);
   private StockReader theStock   = null;
@@ -83,7 +82,7 @@ public class CustomerView implements Observer
     theAction.setText( " " );                       // blank
     cp.add( theAction );                            //  Add to canvas
 
-    theInput.setBounds( 110, 50, 135, 40 );         // Product no area
+    theInput.setBounds( 110, 50, 270, 40 );         // Product no area
     theInput.setText("");                           // Blank
     cp.add( theInput );                             //  Add to canvas
     

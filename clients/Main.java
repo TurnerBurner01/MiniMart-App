@@ -44,7 +44,6 @@ class Main
     MiddleFactory mlf = new LocalMiddleFactory();  // Direct access
 
     startLoginPage_GUI( mlf );
-
   }
   
   /**
@@ -64,6 +63,9 @@ class Main
       @Override
       // If method returns successful then it loads the rest of the GUIs
       public void onLoginSuccess() {
+        // Close the login window after successful login
+        window.dispose();
+
         startCustomerGUI_MVC( mlf );
         startCashierGUI_MVC( mlf );
         startPackingGUI_MVC( mlf );
