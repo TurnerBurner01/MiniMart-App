@@ -54,7 +54,7 @@ class Main
 
   public void startLoginPage_GUI(MiddleFactory mlf) {
     JFrame window = new JFrame("Login");
-    window.setTitle("Customer Login Page");
+    window.setTitle("Login Client MVC");
     Dimension pos = PosOnScrn.getPos();
     window.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
 
@@ -62,6 +62,7 @@ class Main
 
     view.setLoginListener(new LoginView.LoginListener() {
       @Override
+      // If method returns successful then it loads the rest of the GUIs
       public void onLoginSuccess() {
         startCustomerGUI_MVC( mlf );
         startCashierGUI_MVC( mlf );
@@ -75,7 +76,7 @@ class Main
 
   public void startSettingGUI(MiddleFactory mlf) {
     JFrame window = new JFrame("Settings");
-    window.setTitle("Settings");
+    window.setTitle("Settings Client MVC");
     window.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
     Dimension pos = PosOnScrn.getPos();
 
